@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#3F8566" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#2A5C46" media="(prefers-color-scheme: dark)">
+
+        <title>Join a group on Small Group</title>
+        <meta name="description" content="You're invited to join a group on Small Group.">
+        <!-- Every invite link lands here, so keep these out of search results. -->
+        <meta name="robots" content="noindex">
+
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Join my group on Small Group">
+        <meta property="og:description" content="Tap in each day with your small group.">
+        <meta property="og:image" content="https://smallgroupapp.com/assets/icon-512.png">
+
+        <link rel="icon" type="image/png" href="/assets/icon-64.png">
+        <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+        <link rel="stylesheet" href="/style.css?v=1">
+    </head>
+
+    <body>
+        <!--
+            Small Group's invite links point here. On an iPhone with Small Group
+            installed, tapping one opens the app instead (see
+            /.well-known/apple-app-site-association), so this page is for
+            everyone else.
+        -->
+        <div class="band">
+            <header class="site-header">
+                <a href="/" class="brand"><img src="/assets/icon-64.png" alt="" width="32" height="32">Small Group</a>
+            </header>
+
+            <div class="hero">
+                <img class="hero-art" src="/assets/sunrise.png" alt="" width="150" height="150">
+                <h1>You're invited</h1>
+                <p class="hero-lead">
+                    Someone invited you to join their group on Small Group, where a church small
+                    group taps in each day with a photo of where they're reading.
+                </p>
+            </div>
+        </div>
+
+        <main class="page">
+            <div id="has-invite" hidden>
+                <section class="section">
+                    <h2>Have the app?</h2>
+                    <p>
+                        Tapping the invite link usually opens Small Group by itself. If you
+                        landed here instead, open it from here:
+                    </p>
+                    <a id="open-app" href="#" class="button">Open in Small Group</a>
+                </section>
+
+                <section class="section">
+                    <h2>Don't have it yet?</h2>
+                    <p>
+                        Small Group is still being tested, so it isn't on the App Store yet. Ask
+                        the person who invited you to add you as a tester. Once it's on your
+                        phone, tap the invite link again.
+                    </p>
+                </section>
+            </div>
+
+            <div id="no-invite" class="callout" hidden>
+                <span class="callout-label">Link not complete</span>
+                <p>
+                    This link is missing its invite code. Ask the person who invited you to
+                    send the link again.
+                </p>
+            </div>
+
+            <noscript>
+                <div class="callout">
+                    <p>
+                        Open your invite link on the iPhone where Small Group is installed.
+                    </p>
+                </div>
+            </noscript>
+        </main>
+
+        <footer class="site-footer">
+            <nav aria-label="More">
+                <a href="/support/">Support</a>
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/terms/">Terms of Use</a>
+            </nav>
+        </footer>
+
+        <script>
+            // Shows the part of the page that fits the link. The invite code is
+            // the ?invite=... part, the same code the app reads.
+            (function ()
+            {
+                var invite = (new URLSearchParams(window.location.search).get("invite") || "").toLowerCase();
+                var valid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(invite);
+
+                document.getElementById(valid ? "has-invite" : "no-invite").hidden = false;
+                if (valid)
+                {
+                    document.getElementById("open-app").href = "smallgroup://join/" + invite;
+                }
+            })();
+        </script>
+    </body>
+</html>
