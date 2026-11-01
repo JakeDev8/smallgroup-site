@@ -27,4 +27,4 @@ The domain is registered at Porkbun, which also hosts its DNS:
 - **Website:** `A` records at the root pointing to GitHub Pages (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`), plus `www` as a `CNAME` to `jakedev8.github.io`.
 - **Domain verification:** a `TXT` record at `_github-pages-challenge-JakeDev8`. It proves to GitHub that the domain is Jake's, so nobody else's Pages site can claim it.
 - **Email in:** `support@` forwards to Jake's inbox through Porkbun's email forwarding, which adds its own `MX` records.
-- **Email out:** sign-in codes and report emails are sent through Resend from `mail.smallgroupapp.com`. Resend's records sit at `send.mail` and `resend._domainkey.mail`.
+- **Email out:** sign-in codes and report emails are sent through Resend from `mail.smallgroupapp.com`. Resend's records sit at `send.mail`, `rsend.mail` and `resend._domainkey.mail`, with a DMARC record at `_dmarc`.
