@@ -38,8 +38,9 @@
                 <p>
                     Small Group keeps only what it needs to run your group's tap-ins.
                     <strong>Photos and captions are deleted 30 days after you post them</strong>,
-                    and you can delete one yourself anytime. There are no ads, no tracking, and
-                    nothing is ever sold.
+                    and you can delete one yourself anytime. Encrypted backups can keep a caption
+                    for up to 30 more days. There are no ads, no tracking, and nothing is ever
+                    sold.
                 </p>
             </div>
 
@@ -59,7 +60,7 @@
                     <li><strong>Your account:</strong> your email address, used to send you sign-in codes, and the name you choose.</li>
                     <li><strong>Your groups:</strong> which groups you're in, your role in each, and invite links. Owners and moderators can also block people from rejoining a group.</li>
                     <li><strong>Your tap-ins:</strong> which group you tapped in to and on what day. This history powers the calendar and streaks, so it stays with the group even if you leave.</li>
-                    <li><strong>Photos and captions:</strong> what you post with a tap-in. Before uploading, the app shrinks your photo and removes its hidden details, including its location. Posts are deleted 30 days after you post them, or sooner if you delete one or a moderator takes it down. A photo you upload but don't post is deleted within about an hour.</li>
+                    <li><strong>Photos and captions:</strong> what you post with a tap-in. Before uploading, the app shrinks your photo and removes its hidden details, including its location. Posts are deleted 30 days after you post them, or sooner if you delete one or a moderator takes it down. A photo you upload but don't post is deleted within about an hour. Backups can keep a caption for up to 30 more days, but they never include photos.</li>
                     <li><strong>Readings:</strong> the reading owners and moderators set for the group.</li>
                     <li><strong>Your faith:</strong> the app never asks what you believe, but being in a Bible reading group, and what you post there, can show it. It's handled the same way as everything else on this page, and it's never sold.</li>
                     <li><strong>Reports:</strong> if you report a post, the report and the reason you give. The group's owner and moderators see the reason, but not who sent it. I get an email about each report, also without who sent it, so I can act on it within a day.</li>
@@ -67,6 +68,7 @@
                     <li><strong>Notifications:</strong> your phone's notification address and your notification choices. Sent notifications are deleted after 7 days.</li>
                     <li><strong>Daily totals:</strong> a count for each day, like how many people opened the app and tapped in. They're only totals and never say who. A scheduled check by Claude, from Anthropic, reads these totals and technical health numbers each day to tell me if something needs attention. It can't see names, emails or posts.</li>
                     <li><strong>Server logs:</strong> like most online services, the servers keep technical logs, such as IP addresses and request times, for security and troubleshooting.</li>
+                    <li><strong>Backups:</strong> a copy of the database every night, so the app can recover if something goes wrong. It holds what's in the database, like your email address, name, groups, tap-ins and captions, but not photos. Each backup is encrypted so only I can open it, and it's deleted after 30 days.</li>
                 </ul>
             </section>
 
@@ -100,7 +102,7 @@
                     <li><a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Supabase</a> stores the database and photos and handles sign-in, on servers in the United States.</li>
                     <li><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Resend</a> sends the sign-in code emails, and the report emails I get.</li>
                     <li><a href="https://expo.dev/privacy" target="_blank" rel="noopener noreferrer">Expo</a> sends notifications and delivers app updates. Apple, and Google on Android, deliver notifications to your phone.</li>
-                    <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub</a> hosts this website, including the page invite links open. Like any web host, it keeps standard server logs. The site has no tracking of its own.</li>
+                    <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub</a> hosts this website, including the page invite links open, and stores the encrypted backups, which it can't read. Like any web host, it keeps standard server logs. The site has no tracking of its own.</li>
                     <li>If you test the app through TestFlight, Apple may share crash reports and any feedback you choose to send.</li>
                 </ul>
             </section>
@@ -116,7 +118,9 @@
                 <p>
                     If you own a group, it passes to the next person in line, or it's deleted if
                     you're its only member. Reports you sent stay, but no longer say who sent
-                    them. Server logs and any backups expire on their own schedule.
+                    them. Server logs expire on their own schedule. Encrypted backups made before
+                    you deleted your account can still hold your information for up to 30 days,
+                    and then they're deleted too.
                 </p>
                 <p>
                     You can also email me and I'll delete your account for you.
